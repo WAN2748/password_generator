@@ -10,3 +10,6 @@ As requested I had made a password generator. It includes upper and lowercase le
 ![Js top mid](assets/js_ss2.png)
 ![Js bottom mid](assets/js_ss3.png)
 ![Js bottom](assets/js_ss4.png)
+
+
+* [site link](https://wan2748.github.io/password_generator/)
