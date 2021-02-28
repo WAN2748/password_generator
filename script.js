@@ -12,18 +12,74 @@ function writePassword() {
       document.getElementById("password")
       
   }
-  if (length <= 8 -1 ) {
+  if (length < 8 ) {
       alert("please select 8 to 128");
+      //return(writePassword());
       
-  } else if (length >= 128 +1 ) {
-      alert("please select 8 to 128")
-      return;
+  } else if (length > 128 ) {
+      alert("please select 8 to 128");
+      return(writePassword());
   }
   else { 
-    confirm("Would you like numbers?");
-    confirm("Would you like uppercase letters?");
-    confirm("would you like lowercase letters?");
-    confirm("would you like special characters?")
+    
+    upperConfirm = confirm("Would you like uppercase letters?");
+    lowerConfirm = confirm("would you like lowercase letters?");
+    numConfirm = confirm("Would you like numbers?");
+    spCharConfirm = confirm("would you like special characters?")
+}; 
+//non selected
+if (!numConfirm && !upperConfirm && !lowerConfirm && !spCharConfirm) {
+    alert("Must select one or more parameters")
+    return(writePassword());
+}
+//all selected
+else if (upperConfirm && lowerConfirm && numConfirm && spCharConfirm) {
+    selected = randomUpper.concat(randomLower, randomNumeric, randomSpChar);
+}
+//three selected
+else if (upperConfirm && lowerConfirm && numConfirm && !spCharConfirm) {
+    selected = randomUpper.concat(randomLower, randomNumeric);
+}
+else if (upperConfirm && lowerConfirm && !numConfirm && spCharConfirm) {
+    selected = randomUpper.concat(randomLower, randomSpChar);
+}
+else if (upperConfirm && !lowerConfirm && numConfirm && spCharConfirm) {
+    selected = randomUpper.concat(randomNumeric, randomSpChar);
+}
+else if (!upperConfirm && lowerConfirm && numConfirm && spCharConfirm) {
+    selected = randomLower.concat(randomNumeric, randomSpChar);
+}
+//two selected
+else if (upperConfirm && lowerConfirm) {
+    selected = randomUpper.concat(randomLower);
+}
+else if (upperConfirm && numConfirm) {
+    selected = randomUpper.concat(randomNumeric);
+}
+else if (upperConfirm && spCharConfirm) {
+    selected = randomUpper.concat(randomSpChar);
+}
+else if (lowerConfirm && numConfirm){
+    selected = randomLower.concat(randomNumeric);
+}
+else if (lowerConfirm && spCharConfirm){
+    selected = randomLower.concat(spChar);
+}
+else if (numConfirm && spCharConfirm) {
+    selected = randomNumeric.concat(randomSpChar);
+}
+//one selected
+else if (upperConfirm){
+    seleceted = randomUpper;
+}
+else if (lowerConfirm) {
+    selected = randomLower;
+}
+else if (numConfirm) {
+    selected = randomNumeric;
+}
+else if (spCharConfirm) {
+    selected = randomSpChar;
 }
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -39,3 +95,14 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword());
 
 
+var randomUpper = Math.floor(Math.random() * upperLetters.length);
+console.log(randomUpper, upperLetters[randomUpper]);
+
+var randomLower = Math.floor(Math.random() * lowerLetters.length);
+console.log(randomLower, lowerLetters[randomLower]);
+
+var randomNumeric = Math.floor(Math.random() * numeric.length);
+console.log(randomNumeric, numeric[randomNumeric]);
+
+var randomSpChar = Math.floor(Math.random() * spChar.length);
+console.log(randomSpChar, spChar[randomSpChar]);
