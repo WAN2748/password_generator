@@ -14,7 +14,7 @@ function writePassword() {
   }
   if (length < 8 ) {
       alert("please select 8 to 128");
-      //return(writePassword());
+      return(writePassword());
       
   } else if (length > 128 ) {
       alert("please select 8 to 128");
@@ -81,6 +81,7 @@ else if (numConfirm) {
 else if (spCharConfirm) {
     selected = randomSpChar;
 }
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   
@@ -106,3 +107,8 @@ console.log(randomNumeric, numeric[randomNumeric]);
 
 var randomSpChar = Math.floor(Math.random() * spChar.length);
 console.log(randomSpChar, spChar[randomSpChar]);
+
+/*var randomArray = [randomUpper, randomLower, randomNumeric, randomSpChar],
+for(let i = 0 <randomArray.length; i++){
+    console.log(randomArray[i]);
+}*/
