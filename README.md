@@ -5,7 +5,14 @@ As requested I had made a password generator. It includes upper and lowercase le
 * [W3schools](https://www.w3schools.com/js/js_random.asp) helped with Math.random
 * [stackoverflow](https://stackoverflow.com/questions/1497481/javascript-password-generator) was helpful as well in clues on Math aspects and reminders on forming the code
 * I unerstand I need a for loop but am unsure on how to add it as well as following the seleceted parameters !!will update when implemented!!
-### Screen Shots
+
+## how to use 
+* click generate and follow the promts and a password will be generated. Copy and paste to use in new password field.
+
+### Tech
+*JavaScript
+
+#### Screen Shots
 ![Js top](assets/js_ss1.png)
 ![Js top mid](assets/js_ss2.png)
 ![Js bottom mid](assets/js_ss3.png)
